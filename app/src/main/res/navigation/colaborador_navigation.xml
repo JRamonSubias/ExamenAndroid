@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/colaborador_navigation"
+    app:startDestination="@id/menuOptionColaborador">
+
+    <fragment
+        android:id="@+id/menuOptionColaborador"
+        android:name="com.jramons.examenandroid.View.MenuOptionColaborador"
+        android:label="fragment_choose_option"
+        tools:layout="@layout/fragment_choose_option" >
+        <action
+            android:id="@+id/action_menuOptionColaborador_to_listColaboradores"
+            app:destination="@id/listColaboradores" />
+        <action
+            android:id="@+id/action_menuOptionColaborador_to_addColaboradores"
+            app:destination="@id/addColaboradores" />
+    </fragment>
+    <fragment
+        android:id="@+id/addColaboradores"
+        android:name="com.jramons.examenandroid.View.AddColaboradores"
+        android:label="fragment_add_colaboradores"
+        tools:layout="@layout/fragment_add_colaboradores" />
+    <fragment
+        android:id="@+id/mapsColaboradores"
+        android:name="com.jramons.examenandroid.View.MapsColaboradores"
+        android:label="fragment_maps_colaboradores"
+        tools:layout="@layout/fragment_maps_colaboradores" />
+    <fragment
+        android:id="@+id/listColaboradores"
+        android:name="com.jramons.examenandroid.View.ListColaboradores"
+        android:label="fragment_list_colaboradores"
+        tools:layout="@layout/fragment_list_colaboradores" >
+        <action
+            android:id="@+id/action_listColaboradores_to_mapsColaboradores"
+            app:destination="@id/mapsColaboradores" />
+    </fragment>
+</navigation>

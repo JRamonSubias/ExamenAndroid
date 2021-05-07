@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    tools:context=".View.AddColaboradores">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTextName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/name"
+        android:textColorHint="@color/PrimaryBlueLigth"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxStrokeColor="@color/PrimaryBlue"
+        app:layout_constraintBottom_toTopOf="@+id/editTextLastName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/PrimaryBlueText" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTextLastName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/lastname"
+        android:textColorHint="@color/PrimaryBlueLigth"
+        app:boxCornerRadiusBottomEnd="20dp"
+
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxStrokeColor="@color/PrimaryBlue"
+        app:layout_constraintBottom_toTopOf="@+id/editTextLatitud"
+        app:layout_constraintEnd_toEndOf="@+id/editTextName"
+        app:layout_constraintStart_toStartOf="@+id/editTextName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/PrimaryBlueText" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTextLatitud"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/latitud"
+        android:textColorHint="@color/PrimaryBlueLigth"
+        app:boxCornerRadiusBottomEnd="20dp"
+
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxStrokeColor="@color/PrimaryBlue"
+        app:layout_constraintBottom_toTopOf="@+id/editTextLongitud"
+        app:layout_constraintEnd_toEndOf="@+id/editTextLastName"
+        app:layout_constraintStart_toStartOf="@+id/editTextLastName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextLastName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/PrimaryBlueText" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTextLongitud"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/longitud"
+        android:textColorHint="@color/PrimaryBlueLigth"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxStrokeColor="@color/PrimaryBlue"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAddColaborador"
+        app:layout_constraintEnd_toEndOf="@+id/editTextLatitud"
+        app:layout_constraintStart_toStartOf="@+id/editTextLatitud"
+        app:layout_constraintTop_toBottomOf="@+id/editTextLatitud">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/PrimaryBlueText" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonAddColaborador"
+        android:layout_width="382dp"
+        android:layout_height="wrap_content"
+        android:text="@string/addColaborador"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editTextLongitud"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextLongitud" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

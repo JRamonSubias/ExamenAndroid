@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    tools:context=".View.MenuOptionColaborador">
+
+    <ImageView
+        android:id="@+id/img_settings"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonToAddColaborador"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/addColaborador"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/buttonMyColaboradores"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/buttonMyColaboradores"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMyColaboradores" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonMyColaboradores"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/colaboradores"
+        app:layout_constraintBottom_toTopOf="@+id/buttonToAddColaborador"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "501429037952",
+    "project_id": "examenandroid-8a68b",
+    "storage_bucket": "examenandroid-8a68b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501429037952:android:4e0fb24ac2e97033c1af65",
+        "android_client_info": {
+          "package_name": "com.jramons.examenandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501429037952-3ph5s1tqmugmqu0tah7tni5693791efr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jramons.examenandroid",
+            "certificate_hash": "6e025bba959e406f79f95b05335c6fb47660d952"
+          }
+        },
+        {
+          "client_id": "501429037952-befso28cu3emo8j2sgjrknajqb4u92dl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdWn0AhDbR6xaQfkJ4yEB-pAiRsR8RpSY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501429037952-befso28cu3emo8j2sgjrknajqb4u92dl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "501429037952-obhv1ia0diueni9vo94rmeuf5aub29du.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.jramons.examenandroid"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

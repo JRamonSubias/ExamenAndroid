@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ExamenAndroid</string>
+    <string name="email">Correo Electronico</string>
+    <string name="Password">Contraseña</string>
+    <string name="SignIn">"Iniciar Sesion "</string>
+    <string name="ForgotPassword">¿Olvido su contraseña?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ConfirmPassword">Confirmar contraseña</string>
+    <string name="SignUp">"Registrarse "</string>
+    <string name="addColaborador">Agregar Colaborador</string>
+    <string name="colaboradores">Mis colaboradores</string>
+    <string name="name">Nombre(s)</string>
+    <string name="lastname">Apellido Paterno</string>
+    <string name="longitud">Longitud</string>
+    <string name="latitud">Latitud</string>
+    <string name="logOut">Cerrar Sesión</string>
+</resources>
