@@ -1,10 +1,8 @@
-package com.jramons.examenandroid.Model;
+package com.jramons.examenandroid.Model.Providers;
 
 import com.jramons.examenandroid.Model.Retrofit.Resutl;
 import com.jramons.examenandroid.Model.Retrofit.RetroClient;
 import com.jramons.examenandroid.Model.Retrofit.RetroService;
-
-import java.io.File;
 
 import retrofit2.Call;
 

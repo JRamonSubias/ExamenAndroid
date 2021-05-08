@@ -3,66 +3,43 @@ package com.jramons.examenandroid.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.app.DownloadManager;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.net.Uri;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.util.Log;
 
 import com.jramons.examenandroid.InstanceApp;
+import com.jramons.examenandroid.Model.Employees;
+import com.jramons.examenandroid.ParseJson;
 import com.jramons.examenandroid.R;
+import com.jramons.examenandroid.SharedPreferenceManager;
 import com.jramons.examenandroid.ViewModel.FileViewModel;
 
-import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipInputStream;
+import java.util.List;
 
 public class SecondActivity extends AppCompatActivity {
     private FileViewModel viewModel;
-    private long dowloadid;
-    private File file;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
         viewModel = new ViewModelProvider(this).get(FileViewModel.class);
-        viewModel.getFile().observe(this, url->{
-                dowloadFile(url);
-                unZip();
-                readJson();
-        });
-
-        registerReceiver(onDownloadComplete,new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+        if(!SharedPreferenceManager.getSomeBooleanValue(InstanceApp.FILE_JSON)){
+            viewModel.getColaboradoresFileJson();
+          SharedPreferenceManager.setSomeBooleanValue(InstanceApp.FILE_JSON,true);
+        }
+        viewModel.respaldoFDB();
     }
 
-
-
-    private BroadcastReceiver onDownloadComplete = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            long id = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID,-1);
-            if(dowloadid == id){
-                Toast.makeText(context, "Dowload Completed", Toast.LENGTH_SHORT).show();
-            }
-        }
-    };
-
+/*
     private void dowloadFile(String fileUrl){
         file = new File(InstanceApp.getContext().getExternalFilesDir(null),"employees.zip");
         String ruta = file.getAbsolutePath();
 
         DownloadManager.Request request = new DownloadManager.Request(Uri.parse(fileUrl))
-                .setTitle("Employees")
                 .setDescription("Dowloading")
                 .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE)
                 .setDestinationUri(Uri.fromFile(file))
@@ -75,16 +52,30 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     private void readJson() {
-        file = new File(InstanceApp.getContext().getExternalFilesDir(null),"employees_data.json");
-        Boolean is = file.canRead();
-         file.getName();
+        try {
+            FileInputStream fis = null;
+            fis = openFileInput("employees_data.json");
 
+            InputStreamReader inputStreamReader = new InputStreamReader(fis);
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+            String json;
+            StringBuilder stringBuilder = new StringBuilder();
+            while ((json = bufferedReader.readLine()) != null ){
+                stringBuilder.append(json).append("\n");
+            }
+            Log.i("JSON", String.valueOf(stringBuilder));
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void unZip() {
         file = new File(InstanceApp.getContext().getExternalFilesDir(null),"employees.zip");
         String ruta = file.getPath();
-
         InputStream is;
         ZipInputStream  zis;
         try {
@@ -116,11 +107,6 @@ public class SecondActivity extends AppCompatActivity {
         }
 
     }
+*/
 
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterReceiver(onDownloadComplete);
-    }
 }

@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
-import com.jramons.examenandroid.Model.AuthProvider;
 import com.jramons.examenandroid.R;
 import com.jramons.examenandroid.ViewModel.LoginViewModel;
 

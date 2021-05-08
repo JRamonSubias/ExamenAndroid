@@ -3,7 +3,7 @@ package com.jramons.examenandroid.ViewModel;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.jramons.examenandroid.Model.AuthProvider;
+import com.jramons.examenandroid.Model.Providers.AuthProvider;
 
 public class LoginViewModel extends ViewModel {
     private AuthProvider mAuth;
